@@ -21,7 +21,7 @@ public class ServerTCP {
                 }
                 socket.shutdownInput();
 
-                System.out.println(socket.getLocalSocketAddress());
+                System.out.println(socket.getInetAddress() + "" + socket.getPort());
                 String answer = "Доставлено сообщение:" + sb+ "\n" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date().getTime());;
                 OutputStreamWriter writerOut = new OutputStreamWriter(socket.getOutputStream()); //Выходной поток
                 writerOut.write(answer); //запись сообщения в поток
